@@ -1,0 +1,15 @@
+
+
+
+// Instantiate the module
+ContadorOctal instance_name (
+    .notreset(notreset), 
+    .clk(clk), 
+    .load(load), 
+    .cin(cin), 
+    .cout(cout), 
+    .din(din), 
+    .dout(dout)
+    );
+
+

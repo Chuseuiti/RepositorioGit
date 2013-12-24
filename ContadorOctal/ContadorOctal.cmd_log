@@ -1,0 +1,2 @@
+vhdtdtfi -prj ContadorOctal -o C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal.tfi -module ContadorOctal -template D:/xilinx/14.6/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work ContadorOctal.vhd 
+vhdtdtfi -prj ContadorOctal -o C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal.tfi -module ContadorOctal -template D:/xilinx/14.6/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work ContadorOctal.vhd 
