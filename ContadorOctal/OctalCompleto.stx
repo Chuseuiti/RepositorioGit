@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.41 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Parameter xsthdpdir set to C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.41 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Reading design: OctalCompleto.prj
 
@@ -41,15 +41,17 @@ TABLE OF CONTENTS
 =========================================================================
 Parsing VHDL file "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\OctalCompleto.vhd" into library work
 Parsing entity <OctalCompleto>.
-ERROR:HDLCompiler:806 - "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\OctalCompleto.vhd" Line 35: Syntax error near ")".
-ERROR:HDLCompiler:37 - "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\OctalCompleto.vhd" Line 40: "width" cannot be used in this expression.
-ERROR:HDLCompiler:806 - "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\OctalCompleto.vhd" Line 41: Syntax error near ")".
-VHDL file C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\OctalCompleto.vhd ignored due to errors
+Parsing architecture <Behavioral> of entity <octalcompleto>.
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.13 secs
+ 
 --> 
 
-Total memory usage is 160804 kilobytes
+Total memory usage is 160676 kilobytes
 
-Number of errors   :    3 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
