@@ -1,0 +1,10 @@
+
+
+
+// Instantiate the module
+decoder instance_name (
+    .code(code), 
+    .led(led)
+    );
+
+

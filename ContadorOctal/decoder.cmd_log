@@ -1,0 +1,1 @@
+vhdtdtfi -prj ContadorOctal -o C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/decoder.tfi -module decoder -template D:/xilinx/14.6/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work Decoder.vhd 
