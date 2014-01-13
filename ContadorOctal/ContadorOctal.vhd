@@ -71,12 +71,17 @@ ELSIF clk'event AND clk='1'  THEN
 		--Caso de acarreo
 		IF dout_aux="111" THEN
 		dout_aux<=(OTHERS=>'0');
-		cout<='1';
+		
 		--Suma al siguiente valor
 		ELSE
 		dout_aux<=dout_aux + 1;
-		cout<='0';
-		
+
+		END IF;
+		--ACARREO
+		IF dout_aux="110" THEN
+				cout<='1';
+		ELSE
+				cout<='0';
 		END IF;
 	END IF;
 	

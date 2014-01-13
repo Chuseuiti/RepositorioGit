@@ -150,7 +150,7 @@ LAB5:    goto LAB4;
 LAB7:    goto LAB5;
 
 LAB8:    t2 = (t0 + 4327);
-    xsi_report(t2, 20U, (unsigned char)3);
+    xsi_report(t2, 22U, (unsigned char)3);
     goto LAB9;
 
 }

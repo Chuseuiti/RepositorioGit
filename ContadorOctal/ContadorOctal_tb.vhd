@@ -75,7 +75,7 @@ clk <= not clk AFTER 20 ns;
 		  wait for 1000 ns;
 		  
 		  	assert false
-		  	report "Fin de la simulación"
+		  	report "Fin de la simulación. "
 		  	severity failure;
 		  
      END PROCESS ;

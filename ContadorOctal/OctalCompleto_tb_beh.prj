@@ -1,0 +1,3 @@
+vhdl work "ContadorOctal.vhd"
+vhdl work "OctalCompleto.vhd"
+vhdl work "OctalCompleto_tb.vhd"
