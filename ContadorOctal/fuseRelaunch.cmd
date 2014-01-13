@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal_tb_isim_beh.exe" -prj "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal_tb_beh.prj" "work.ContadorOctal_tb" 
+-intstyle "ise" -incremental -o "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/top_tb_isim_beh.exe" -prj "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/top_tb_beh.prj" "work.top_tb" 

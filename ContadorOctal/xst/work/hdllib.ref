@@ -1,0 +1,10 @@
+AR octalcompleto behavioral C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/OctalCompleto.vhd sub00/vhpl03 1389611831
+AR contadoroctal behavioral C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal.vhd sub00/vhpl01 1389611829
+AR decoder dataflow C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/Decoder.vhd sub00/vhpl05 1389611833
+EN octalcompleto NULL C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/OctalCompleto.vhd sub00/vhpl02 1389611830
+EN top NULL C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/top.vhd sub00/vhpl06 1389611836
+AR top behavioral C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/top.vhd sub00/vhpl09 1389611837
+EN contadoroctal NULL C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal.vhd sub00/vhpl00 1389611828
+EN decoder NULL C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/Decoder.vhd sub00/vhpl04 1389611832
+AR selectordisplay behavioral C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/SelectorDisplay.vhd sub00/vhpl08 1389611835
+EN selectordisplay NULL C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/SelectorDisplay.vhd sub00/vhpl07 1389611834

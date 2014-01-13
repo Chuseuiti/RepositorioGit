@@ -1,0 +1,5 @@
+vhdl work "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\ContadorOctal.vhd"
+vhdl work "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\SelectorDisplay.vhd"
+vhdl work "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\OctalCompleto.vhd"
+vhdl work "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\Decoder.vhd"
+vhdl work "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\top.vhd"

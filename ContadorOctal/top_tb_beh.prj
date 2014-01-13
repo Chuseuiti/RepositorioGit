@@ -1,0 +1,6 @@
+vhdl work "ContadorOctal.vhd"
+vhdl work "SelectorDisplay.vhd"
+vhdl work "OctalCompleto.vhd"
+vhdl work "Decoder.vhd"
+vhdl work "top.vhd"
+vhdl work "top_tb.vhd"

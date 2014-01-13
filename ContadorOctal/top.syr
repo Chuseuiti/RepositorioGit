@@ -4,36 +4,31 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.49 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.50 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Reading design: top.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
-  2) HDL Parsing
-  3) HDL Elaboration
-  4) HDL Synthesis
-       4.1) HDL Synthesis Report
-  5) Advanced HDL Synthesis
-       5.1) Advanced HDL Synthesis Report
-  6) Low Level Synthesis
-  7) Partition Report
-  8) Design Summary
-       8.1) Primitive and Black Box Usage
-       8.2) Device utilization summary
-       8.3) Partition Resource Summary
-       8.4) Timing Report
-            8.4.1) Clock Information
-            8.4.2) Asynchronous Control Signals Information
-            8.4.3) Timing Summary
-            8.4.4) Timing Details
-            8.4.5) Cross Clock Domains Report
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
 
 
 =========================================================================
@@ -41,12 +36,13 @@ TABLE OF CONTENTS
 =========================================================================
 ---- Source Parameters
 Input File Name                    : "top.prj"
+Input Format                       : mixed
 Ignore Synthesis Constraint File   : NO
 
 ---- Target Parameters
 Output File Name                   : "top"
 Output Format                      : NGC
-Target Device                      : xc7a100t-3-csg324
+Target Device                      : xc3s200-5-ft256
 
 ---- Source Options
 Top Module Name                    : top
@@ -57,32 +53,35 @@ FSM Style                          : LUT
 RAM Extraction                     : Yes
 RAM Style                          : Auto
 ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
 Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
 ROM Style                          : Auto
+Mux Extraction                     : Yes
 Resource Sharing                   : YES
 Asynchronous To Synchronous        : NO
-Shift Register Minimum Size        : 2
-Use DSP Block                      : Auto
+Multiplier Style                   : Auto
 Automatic Register Balancing       : No
 
 ---- Target Options
-LUT Combining                      : Auto
-Reduce Control Sets                : Auto
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 100000
-Add Generic Clock Buffer(BUFG)     : 32
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
 Register Duplication               : YES
+Slice Packing                      : YES
 Optimize Instantiated Primitives   : NO
-Use Clock Enable                   : Auto
-Use Synchronous Set                : Auto
-Use Synchronous Reset              : Auto
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
 Pack IO Registers into IOBs        : Auto
 Equivalent register Removal        : YES
 
 ---- General Options
 Optimization Goal                  : Speed
 Optimization Effort                : 1
-Power Reduction                    : NO
 Keep Hierarchy                     : No
 Netlist Hierarchy                  : As_Optimized
 RTL Output                         : Yes
@@ -95,7 +94,7 @@ Bus Delimiter                      : <>
 Case Specifier                     : Maintain
 Slice Utilization Ratio            : 100
 BRAM Utilization Ratio             : 100
-DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
@@ -103,84 +102,134 @@ Slice Utilization Ratio Delta      : 5
 
 
 =========================================================================
-*                          HDL Parsing                                  *
+*                          HDL Compilation                              *
 =========================================================================
-Parsing VHDL file "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\ContadorOctal.vhd" into library work
-Parsing entity <ContadorOctal>.
-Parsing architecture <Behavioral> of entity <contadoroctal>.
-Parsing VHDL file "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\OctalCompleto.vhd" into library work
-Parsing entity <OctalCompleto>.
-Parsing architecture <Behavioral> of entity <octalcompleto>.
-Parsing VHDL file "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\Decoder.vhd" into library work
-Parsing entity <decoder>.
-Parsing architecture <dataflow> of entity <decoder>.
-Parsing VHDL file "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\top.vhd" into library work
-Parsing entity <top>.
-Parsing architecture <Behavioral> of entity <top>.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal.vhd" in Library work.
+Architecture behavioral of Entity contadoroctal is up to date.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/OctalCompleto.vhd" in Library work.
+Architecture behavioral of Entity octalcompleto is up to date.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/Decoder.vhd" in Library work.
+Architecture dataflow of Entity decoder is up to date.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/SelectorDisplay.vhd" in Library work.
+Architecture behavioral of Entity selectordisplay is up to date.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/top.vhd" in Library work.
+Entity <top> compiled.
+Entity <top> (Architecture <Behavioral>) compiled.
 
 =========================================================================
-*                            HDL Elaboration                            *
+*                     Design Hierarchy Analysis                         *
 =========================================================================
+Analyzing hierarchy for entity <top> in library <work> (architecture <Behavioral>) with generics.
+	width = 2
 
-Elaborating entity <top> (architecture <Behavioral>) with generics from library <work>.
+Analyzing hierarchy for entity <OctalCompleto> in library <work> (architecture <behavioral>) with generics.
+	width = 2
 
-Elaborating entity <OctalCompleto> (architecture <Behavioral>) with generics from library <work>.
+Analyzing hierarchy for entity <decoder> in library <work> (architecture <dataflow>).
 
-Elaborating entity <ContadorOctal> (architecture <Behavioral>) with generics from library <work>.
+Analyzing hierarchy for entity <SelectorDisplay> in library <work> (architecture <behavioral>).
 
-Elaborating entity <decoder> (architecture <dataflow>) from library <work>.
+Analyzing hierarchy for entity <ContadorOctal> in library <work> (architecture <behavioral>) with generics.
+	width = 2
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <top> in library <work> (Architecture <Behavioral>).
+	width = 2
+WARNING:Xst:819 - "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/top.vhd" line 123: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <segment0>, <segment1>
+Entity <top> analyzed. Unit <top> generated.
+
+Analyzing generic Entity <OctalCompleto> in library <work> (Architecture <behavioral>).
+	width = 2
+Entity <OctalCompleto> analyzed. Unit <OctalCompleto> generated.
+
+Analyzing generic Entity <ContadorOctal> in library <work> (Architecture <behavioral>).
+	width = 2
+Entity <ContadorOctal> analyzed. Unit <ContadorOctal> generated.
+
+Analyzing Entity <decoder> in library <work> (Architecture <dataflow>).
+Entity <decoder> analyzed. Unit <decoder> generated.
+
+Analyzing Entity <SelectorDisplay> in library <work> (Architecture <behavioral>).
+Entity <SelectorDisplay> analyzed. Unit <SelectorDisplay> generated.
+
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
-Synthesizing Unit <top>.
-    Related source file is "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\top.vhd".
-        width = 2
-    Summary:
-	no macro.
-Unit <top> synthesized.
-
-Synthesizing Unit <OctalCompleto>.
-    Related source file is "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\OctalCompleto.vhd".
-        width = 2
-    Summary:
-	inferred   2 Multiplexer(s).
-Unit <OctalCompleto> synthesized.
-
-Synthesizing Unit <ContadorOctal>.
-    Related source file is "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\ContadorOctal.vhd".
-        width = 2
-    Found 3-bit register for signal <dout_aux>.
-    Found 1-bit register for signal <cout>.
-    Found 3-bit adder for signal <dout_aux[2]_GND_7_o_add_1_OUT> created at line 77.
-    Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred   4 D-type flip-flop(s).
-	inferred   3 Multiplexer(s).
-Unit <ContadorOctal> synthesized.
+Performing bidirectional port resolution...
 
 Synthesizing Unit <decoder>.
-    Related source file is "C:\Users\Jesus\Documents\GitHub\RepositorioGit\ContadorOctal\Decoder.vhd".
-    Found 8x7-bit Read Only RAM for signal <led>
+    Related source file is "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/Decoder.vhd".
+    Found 8x7-bit ROM for signal <led>.
     Summary:
-	inferred   1 RAM(s).
+	inferred   1 ROM(s).
 Unit <decoder> synthesized.
+
+
+Synthesizing Unit <SelectorDisplay>.
+    Related source file is "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/SelectorDisplay.vhd".
+    Found finite state machine <FSM_0> for signal <display>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 2                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 2                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | notreset                  (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <SelectorDisplay> synthesized.
+
+
+Synthesizing Unit <ContadorOctal>.
+    Related source file is "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal.vhd".
+    Found 1-bit register for signal <cout>.
+    Found 3-bit register for signal <dout_aux>.
+    Found 3-bit adder for signal <dout_aux$addsub0000> created at line 77.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ContadorOctal> synthesized.
+
+
+Synthesizing Unit <OctalCompleto>.
+    Related source file is "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/OctalCompleto.vhd".
+WARNING:Xst:1780 - Signal <cin_intermedio1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <OctalCompleto> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/top.vhd".
+WARNING:Xst:1306 - Output <dout0> is never assigned.
+WARNING:Xst:1306 - Output <dout1> is never assigned.
+WARNING:Xst:737 - Found 7-bit latch for signal <segment>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+Unit <top> synthesized.
+
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
- 8x7-bit single-port Read Only RAM                     : 2
+# ROMs                                                 : 2
+ 8x7-bit ROM                                           : 2
 # Adders/Subtractors                                   : 2
  3-bit adder                                           : 2
 # Registers                                            : 4
  1-bit register                                        : 2
  3-bit register                                        : 2
-# Multiplexers                                         : 8
- 1-bit 2-to-1 multiplexer                              : 4
- 3-bit 2-to-1 multiplexer                              : 4
+# Latches                                              : 1
+ 7-bit latch                                           : 1
 
 =========================================================================
 
@@ -188,40 +237,41 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-
-Synthesizing (advanced) Unit <decoder>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_led> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 8-word x 7-bit                      |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <code>          |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to signal <led>           |          |
-    -----------------------------------------------------------------------
-Unit <decoder> synthesized (advanced).
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <Inst_SelectorDisplay/display/FSM> on signal <display[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 0001
+ 0010  | 0010
+-------------------
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
- 8x7-bit single-port distributed Read Only RAM         : 2
+# FSMs                                                 : 1
+# ROMs                                                 : 2
+ 8x7-bit ROM                                           : 2
 # Adders/Subtractors                                   : 2
  3-bit adder                                           : 2
 # Registers                                            : 8
  Flip-Flops                                            : 8
-# Multiplexers                                         : 8
- 1-bit 2-to-1 multiplexer                              : 4
- 3-bit 2-to-1 multiplexer                              : 4
+# Latches                                              : 1
+ 7-bit latch                                           : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1294 - Latch <segment_0> is equivalent to a wire in block <top>.
+WARNING:Xst:1294 - Latch <segment_1> is equivalent to a wire in block <top>.
+WARNING:Xst:1294 - Latch <segment_2> is equivalent to a wire in block <top>.
+WARNING:Xst:1294 - Latch <segment_3> is equivalent to a wire in block <top>.
+WARNING:Xst:1294 - Latch <segment_4> is equivalent to a wire in block <top>.
+WARNING:Xst:1294 - Latch <segment_5> is equivalent to a wire in block <top>.
+WARNING:Xst:1294 - Latch <segment_6> is equivalent to a wire in block <top>.
 
 Optimizing unit <top> ...
 
@@ -229,7 +279,7 @@ Optimizing unit <ContadorOctal> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -237,8 +287,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 8
- Flip-Flops                                            : 8
+# Registers                                            : 9
+ Flip-Flops                                            : 9
 
 =========================================================================
 
@@ -254,50 +304,48 @@ Partition Implementation Status
 -------------------------------
 
 =========================================================================
-*                            Design Summary                             *
+*                            Final Report                               *
 =========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
 
-Top Level Output File Name         : top.ngc
+Design Statistics
+# IOs                              : 28
 
-Primitive and Black Box Usage:
-------------------------------
-# BELS                             : 26
+Cell Usage :
+# BELS                             : 38
+#      GND                         : 1
+#      INV                         : 2
 #      LUT2                        : 2
+#      LUT2_L                      : 2
 #      LUT3                        : 16
-#      LUT4                        : 6
-#      LUT5                        : 2
-# FlipFlops/Latches                : 8
+#      LUT4                        : 8
+#      MUXF5                       : 7
+# FlipFlops/Latches                : 9
+#      FDC                         : 1
 #      FDCE                        : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 24
+# IO Buffers                       : 21
 #      IBUF                        : 9
-#      OBUF                        : 15
+#      OBUF                        : 12
+=========================================================================
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : 7a100tcsg324-3 
+Selected Device : 3s200ft256-5 
 
-
-Slice Logic Utilization: 
- Number of Slice Registers:               8  out of  126800     0%  
- Number of Slice LUTs:                   26  out of  63400     0%  
-    Number used as Logic:                26  out of  63400     0%  
-
-Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     26
-   Number with an unused Flip Flop:      18  out of     26    69%  
-   Number with an unused LUT:             0  out of     26     0%  
-   Number of fully used LUT-FF pairs:     8  out of     26    30%  
-   Number of unique control sets:         2
-
-IO Utilization: 
- Number of IOs:                          31
- Number of bonded IOBs:                  25  out of    210    11%  
-
-Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+ Number of Slices:                       15  out of   1920     0%  
+ Number of Slice Flip Flops:              9  out of   3840     0%  
+ Number of 4 input LUTs:                 30  out of   3840     0%  
+ Number of IOs:                          28
+ Number of bonded IOBs:                  22  out of    173    12%  
+ Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -309,7 +357,7 @@ Partition Resource Summary:
 
 
 =========================================================================
-Timing Report
+TIMING REPORT
 
 NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
       FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
@@ -320,112 +368,106 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 8     |
+clk                                | BUFGP                  | 9     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-No asynchronous control signals found in this design
+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------+-------+
+Control Signal                                                                                             | Buffer(FF name)                                  | Load  |
+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------+-------+
+Inst_OctalCompleto/Inst_ContadorOctal0/notreset_inv(Inst_OctalCompleto/Inst_ContadorOctal0/notreset_inv1:O)| NONE(Inst_OctalCompleto/Inst_ContadorOctal0/cout)| 4     |
+Inst_OctalCompleto/Inst_ContadorOctal1/notreset_inv(Inst_OctalCompleto/Inst_ContadorOctal1/notreset_inv1:O)| NONE(Inst_OctalCompleto/Inst_ContadorOctal1/cout)| 4     |
+Inst_SelectorDisplay/display_FSM_Acst_FSM_inv(Inst_SelectorDisplay/display_FSM_Acst_FSM_inv1_INV_0:O)      | NONE(Inst_SelectorDisplay/display_FSM_FFd3)      | 1     |
+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------+-------+
 
 Timing Summary:
 ---------------
-Speed Grade: -3
+Speed Grade: -5
 
-   Minimum period: 1.668ns (Maximum Frequency: 599.664MHz)
-   Minimum input arrival time before clock: 1.301ns
-   Maximum output required time after clock: 1.305ns
+   Minimum period: 3.259ns (Maximum Frequency: 306.814MHz)
+   Minimum input arrival time before clock: 3.756ns
+   Maximum output required time after clock: 8.298ns
    Maximum combinational path delay: No path found
 
-Timing Details:
----------------
+Timing Detail:
+--------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 1.668ns (frequency: 599.664MHz)
-  Total number of paths / destination ports: 46 / 20
+  Clock period: 3.259ns (frequency: 306.814MHz)
+  Total number of paths / destination ports: 23 / 13
 -------------------------------------------------------------------------
-Delay:               1.668ns (Levels of Logic = 1)
-  Source:            Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0 (FF)
-  Destination:       Inst_OctalCompleto/Inst_ContadorOctal0/cout (FF)
+Delay:               3.259ns (Levels of Logic = 1)
+  Source:            Inst_OctalCompleto/Inst_ContadorOctal0/cout (FF)
+  Destination:       Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0 to Inst_OctalCompleto/Inst_ContadorOctal0/cout
+  Data Path: Inst_OctalCompleto/Inst_ContadorOctal0/cout to Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            13   0.361   0.567  Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0 (Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0)
-     LUT4:I1->O            4   0.097   0.293  Inst_OctalCompleto/Inst_ContadorOctal0/notreset_inv1 (Inst_OctalCompleto/Inst_ContadorOctal0/notreset_inv)
-     FDCE:CLR                  0.349          Inst_OctalCompleto/Inst_ContadorOctal0/dout_aux_0
+     FDCE:C->Q             1   0.626   0.851  Inst_OctalCompleto/Inst_ContadorOctal0/cout (Inst_OctalCompleto/Inst_ContadorOctal0/cout)
+     LUT2:I1->O            4   0.479   0.779  Inst_OctalCompleto/Inst_ContadorOctal1/cout_not00011 (Inst_OctalCompleto/Inst_ContadorOctal1/cout_not0001)
+     FDCE:CE                   0.524          Inst_OctalCompleto/Inst_ContadorOctal1/cout
     ----------------------------------------
-    Total                      1.668ns (0.807ns logic, 0.861ns route)
-                                       (48.4% logic, 51.6% route)
+    Total                      3.259ns (1.629ns logic, 1.630ns route)
+                                       (50.0% logic, 50.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 34 / 24
+  Total number of paths / destination ports: 26 / 16
 -------------------------------------------------------------------------
-Offset:              1.301ns (Levels of Logic = 2)
-  Source:            notreset (PAD)
-  Destination:       Inst_OctalCompleto/Inst_ContadorOctal0/cout (FF)
+Offset:              3.756ns (Levels of Logic = 2)
+  Source:            load (PAD)
+  Destination:       Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_2 (FF)
   Destination Clock: clk rising
 
-  Data Path: notreset to Inst_OctalCompleto/Inst_ContadorOctal0/cout
+  Data Path: load to Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   0.001   0.561  notreset_IBUF (notreset_IBUF)
-     LUT4:I0->O            4   0.097   0.293  Inst_OctalCompleto/Inst_ContadorOctal0/notreset_inv1 (Inst_OctalCompleto/Inst_ContadorOctal0/notreset_inv)
-     FDCE:CLR                  0.349          Inst_OctalCompleto/Inst_ContadorOctal0/dout_aux_0
+     IBUF:I->O            10   0.715   1.259  load_IBUF (load_IBUF)
+     LUT2:I0->O            4   0.479   0.779  Inst_OctalCompleto/Inst_ContadorOctal1/cout_not00011 (Inst_OctalCompleto/Inst_ContadorOctal1/cout_not0001)
+     FDCE:CE                   0.524          Inst_OctalCompleto/Inst_ContadorOctal1/cout
     ----------------------------------------
-    Total                      1.301ns (0.447ns logic, 0.854ns route)
-                                       (34.4% logic, 65.6% route)
+    Total                      3.756ns (1.718ns logic, 2.038ns route)
+                                       (45.7% logic, 54.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 43 / 15
+  Total number of paths / destination ports: 52 / 10
 -------------------------------------------------------------------------
-Offset:              1.305ns (Levels of Logic = 2)
+Offset:              8.298ns (Levels of Logic = 3)
   Source:            Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0 (FF)
-  Destination:       segment1<4> (PAD)
+  Destination:       segment<4> (PAD)
   Source Clock:      clk rising
 
-  Data Path: Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0 to segment1<4>
+  Data Path: Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0 to segment<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            13   0.361   0.567  Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0 (Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0)
-     LUT3:I0->O            1   0.097   0.279  Inst_Decoder1/Mram_led21 (segment1_2_OBUF)
-     OBUF:I->O                 0.000          segment1_2_OBUF (segment1<2>)
+     FDCE:C->Q            13   0.626   1.289  Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0 (Inst_OctalCompleto/Inst_ContadorOctal1/dout_aux_0)
+     LUT3:I0->O            1   0.479   0.000  segment_mux0001<4>_G (N42)
+     MUXF5:I1->O           1   0.314   0.681  segment_mux0001<4> (segment_4_OBUF)
+     OBUF:I->O                 4.909          segment_4_OBUF (segment<4>)
     ----------------------------------------
-    Total                      1.305ns (0.458ns logic, 0.847ns route)
-                                       (35.1% logic, 64.9% route)
-
-=========================================================================
-
-Cross Clock Domains Report:
---------------------------
-
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    1.668|         |         |         |
----------------+---------+---------+---------+---------+
+    Total                      8.298ns (6.328ns logic, 1.970ns route)
+                                       (76.3% logic, 23.7% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 30.00 secs
-Total CPU time to Xst completion: 30.09 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.04 secs
  
 --> 
 
-Total memory usage is 306780 kilobytes
+Total memory usage is 191780 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of warnings :   12 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

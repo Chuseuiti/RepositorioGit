@@ -1,1 +1,5 @@
+work	"ContadorOctal.vhd"
 work	"Decoder.vhd"
+work	"OctalCompleto.vhd"
+work	"SelectorDisplay.vhd"
+work	"top.vhd"

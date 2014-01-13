@@ -1,0 +1,6 @@
+vhdl isim_temp "ContadorOctal.vhd"
+vhdl isim_temp "SelectorDisplay.vhd"
+vhdl isim_temp "OctalCompleto.vhd"
+vhdl isim_temp "Decoder.vhd"
+vhdl isim_temp "top.vhd"
+vhdl isim_temp "top_tb.vhd"

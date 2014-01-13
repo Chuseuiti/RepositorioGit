@@ -1,0 +1,42 @@
+Release 14.6 - xst P.68d (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.38 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.38 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/ContadorOctal.vhd" in Library work.
+Architecture behavioral of Entity contadoroctal is up to date.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/OctalCompleto.vhd" in Library work.
+Architecture behavioral of Entity octalcompleto is up to date.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/Decoder.vhd" in Library work.
+Architecture dataflow of Entity decoder is up to date.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/SelectorDisplay.vhd" in Library work.
+Architecture behavioral of Entity selectordisplay is up to date.
+Compiling vhdl file "C:/Users/Jesus/Documents/GitHub/RepositorioGit/ContadorOctal/top.vhd" in Library work.
+Architecture behavioral of Entity top is up to date.
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.27 secs
+ 
+--> 
+
+Total memory usage is 167920 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
